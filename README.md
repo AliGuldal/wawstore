@@ -1,7 +1,6 @@
 # WawStore - Modern E-Ticaret Frontend Projesi
 
-![WawStore](<img width="1901" height="913" alt="image" src="https://github.com/user-attachments/assets/727f874c-c2c6-41af-992e-7297bc469683" />
-)  
+(<img width="1901" height="913" alt="image" src="https://github.com/user-attachments/assets/727f874c-c2c6-41af-992e-7297bc469683" />)  
 
 ## Proje Özellikleri
 
