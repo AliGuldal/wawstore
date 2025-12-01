@@ -28,7 +28,11 @@
 ## Kurulum & Çalıştırma
 
 <img width="1906" height="911" alt="image" src="https://github.com/user-attachments/assets/0e289af1-61fc-44ac-8c2a-2a1e4f550d1c" />
-<img width="232" height="54" alt="image" src="https://github.com/user-attachments/assets/c47f4c5d-e26a-4bb1-9ecc-8e94470c3170" /> <img width="218" height="71" alt="image" src="https://github.com/user-attachments/assets/6d1e8156-6bfe-4ecc-9e92-32f0293bb632" />
+<img width="206" height="39" alt="image" src="https://github.com/user-attachments/assets/cf019531-aa84-4b76-bd08-29c69c1d5a6b" /> <img width="193" height="40" alt="image" src="https://github.com/user-attachments/assets/2d46b6c0-4076-4a88-a22d-480a67eeb181" />
+<img width="238" height="349" alt="image" src="https://github.com/user-attachments/assets/6dab8cf9-0231-40d7-9e37-284bdb1ca120" />
+
+
+
 
 
 
