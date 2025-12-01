@@ -1,400 +1,482 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-:root {
-    --primary-color: #00A8A6;
-    --secondary-color: #7d06cc;
-    --background-light: #F8F9FA;
-    --surface-white: #ffffff;
-    --text-dark: #2C3E50;
-    --text-muted: #7F8C8D;
-    --border-soft: #ECECEC;
-    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
-    --accent-success: #2ECC71;
-    --accent-error: #E74C3C;
-
-    --takvim-header-bg: #343a40;
-    --takvim-bos-tam-bg: #d4edda;
-    --takvim-bos-tam-text: #155724;
-    --takvim-dolu-kismen-bg: #fff3cd;
-    --takvim-dolu-kismen-text: #856404;
-    --takvim-dolu-tam-bg: #f8d7da;
-    --takvim-dolu-tam-text: #721c24;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-image: url('resimler/sheratontelaviv_CUGC0VhcmE.avif');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding-bottom: 50px;
-    position: relative;
+  background-color: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.25);
-    z-index: -1;
+header {
+  background: linear-gradient(90deg, #a83500, #7f4800);
+  color: rgb(206, 201, 201);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.container {
-    max-width: 1050px;
-    margin: 40px auto;
-    background-color: var(--surface-white);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
-    margin-bottom: 5px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+header input {
+  width: 40%;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
 }
 
-.slogan {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    font-style: italic;
+header .cart {
+  background-color: rgba(31, 22, 22, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-h2.section-title {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-align: left;
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 15px;
-}
-h2.section-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 80%;
-    background-color: var(--secondary-color);
-    border-radius: 3px;
+header .cart:hover {
+  background-color: rgba(255,255,255,0.4);
 }
 
-h3 {
-    color: var(--text-dark);
-    font-size: 1.5rem;
-    font-weight: 500;
+main {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 1.5rem;
 }
 
-h4 {
-    font-weight: 500;
+aside {
+  width: 220px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  padding: 1rem;
+  height: fit-content;
 }
 
-.takvim-ayarlari + h4 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    clear: both;
+aside h3 {
+  margin-bottom: 1rem;
+  color: #a85a00;
+  font-weight: 600;
 }
 
-.form-control, input[type="text"], select, textarea, input[type="date"], input[type="email"], input[type="password"] {
-    border: none;
-    border-bottom: 2px solid var(--border-soft);
-    border-radius: 0;
-    padding: 12px 0;
-    margin-bottom: 20px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: transparent;
-    width: 100%;
-    box-sizing: border-box;
-    line-height: 1.5;
-    min-height: 48px;
+aside ul {
+  list-style: none;
 }
 
-.form-control:focus, select:focus, input:focus, textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: none;
-    outline: none;
+aside li {
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.odeme-panel-box {
-    border: 1px solid var(--border-soft);
-    border-radius: 12px;
-    background-color: #fcfcfc;
+aside li:hover {
+  background-color: #f1e5cc;
 }
 
-.ozellik-secimleri, .ek-hizmetler-secimleri {
-    padding: 10px 0;
-    border-top: 1px solid var(--border-soft);
-    border-bottom: 1px solid var(--border-soft);
-    margin-bottom: 30px;
+aside li.active {
+  background-color: #a84c00;
+  color: white;
+  font-weight: 500;
 }
 
-.filtre-alani {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px 30px;
-    align-items: flex-end;
-    margin-bottom: 30px;
-    padding: 0;
+#productList {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.filtre-grup {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 0;
-    min-width: 150px;
-    width: auto;
+.product {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
 }
 
-.filtre-grup label {
-    color: var(--text-dark);
-    font-weight: 500;
-    white-space: nowrap;
-    margin-bottom: 5px !important;
-    padding: 0 !important;
-    line-height: 1.2;
-    display: block;
-    text-align: left;
+.product:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.filtre-grup select {
-    margin-bottom: 0 !important;
-    padding: 10px 0 10px 5px !important;
-    font-size: 1rem;
-    color: var(--text-dark);
-    width: 100%;
-    height: auto !important;
-    line-height: 1.2 !important;
-    box-sizing: border-box;
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
-.btn {
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+.product .info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
+.product .info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
-.btn-primary {
-    background: linear-gradient(90deg, #00A8A6, #008f8e);
-    color: var(--surface-white);
-}
-.btn-primary:hover {
-    box-shadow: 0 0 15px rgba(0, 168, 166, 0.6);
-}
-
-.btn-success {
-    background-color: var(--accent-success);
-    color: var(--surface-white);
-    font-size: 1.1rem;
-}
-.btn-success:hover {
-    background-color: #27ae60;
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+.product .info p {
+  color: #a84c00;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
 }
 
-.btn-danger {
-    background-color: var(--accent-error);
-    color: var(--surface-white);
+.product button {
+  background-color: #a84c00;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.oda-kartlar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin: 40px 0;
+.product button:hover {
+  background-color: #743604;
 }
 
-.oda-kart {
-    background: var(--surface-white);
-    border-radius: 15px;
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px solid var(--border-soft);
-}
-.oda-kart:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0, 168, 166, 0.25);
-}
-.oda-kart img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.oda-kart h3 {
-    text-align: center;
-    padding: 15px 0 5px;
-    margin: 0;
-}
-.oda-kart p {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding-bottom: 20px;
-    text-align: center;
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-.takvim-container-yeni {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    border: 1px solid var(--border-soft);
-    padding: 10px;
-    background-color: #f8f8f8;
-    margin-bottom: 20px;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
 }
 
-.takvim-gun-header {
-    background-color: var(--takvim-header-bg);
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 14px;
-    border-radius: 4px;
+.cart-popup.active {
+  width: 100%;
 }
 
-.takvim-gun-hucre {
-    border: 1px solid #ccc;
-    min-height: 80px;
-    padding: 7px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: right;
-    cursor: default;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+.cart-content {
+  background-color: #fff;
+  width: 380px;
+  padding: 1.5rem;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.25);
+  height: 100%;
+  overflow-y: auto;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
-.bos-tam {
-    background-color: var(--takvim-bos-tam-bg);
-    color: var(--takvim-bos-tam-text);
+.cart-content h2 {
+  margin-bottom: 1rem;
+  color: #a84c00;
 }
 
-.dolu-kismen {
-    background-color: var(--takvim-dolu-kismen-bg);
-    color: var(--takvim-dolu-kismen-text);
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.dolu-tam {
-    background-color: var(--takvim-dolu-tam-bg);
-    color: var(--takvim-dolu-tam-text);
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  transition: 0.3s;
 }
 
-.takvim-gun-hucre:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+.cart-item:hover {
+  background-color: #e6f7f6;
 }
 
-.takvim-gun-hucre small {
-    font-weight: normal;
-    font-size: 11px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 2px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+.cart-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.takvim-ayarlari {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+.cart-item .info {
+  flex: 1;
+  margin-left: 12px;
 }
 
-.takvim-nav {
-    max-width: 850px;
-    margin: 10px auto;
+.cart-item .info h4 {
+  font-size: 0.95rem;
 }
 
-.list-group-item {
-    border-left: 5px solid var(--secondary-color);
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-soft);
-    background-color: var(--surface-white);
-    padding: 15px 20px;
-    font-weight: 500;
+.cart-item .info p {
+  color: #a84c00;
+  font-weight: 500;
 }
 
-#anlikFiyatGosterge {
-    border: 1px solid var(--primary-color);
-    border-left: 5px solid var(--primary-color);
-    border-radius: 10px;
-    font-size: 1.1rem;
-    padding: 15px 20px;
-    background-color: #f7fcfc;
-    color: var(--text-dark);
-    font-weight: 600;
+.cart-item button {
+  background: none;
+  border: none;
+  color: crimson;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
-#anlikFiyatGosterge.alert-success {
-    border-color: var(--accent-success);
-    border-left: 5px solid var(--accent-success);
-    background-color: #f3fff3;
-    color: var(--accent-success);
+.cart-item button:hover {
+  color: #b2002d;
 }
 
-.kart-destek-info {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    border-bottom: 1px dashed var(--border-soft);
-    padding-bottom: 8px;
-    margin-top: -5px;
+#cartTotal {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }
 
-@media (max-width: 1100px) {
-    .container { max-width: 95%; }
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.buttons button {
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#clearCart {
+  background-color: crimson;
+  color: white;
+}
+
+#closeCart {
+  background-color: #a84c00;
+  color: white;
+}
+
+#clearCart:hover {
+  background-color: #b2002d;
+}
+
+#closeCart:hover {
+  background-color: #532702;
+}
+
+.adet-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.adet-buttons button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #8b4002;
+  border-radius: 6px;
+  background: white;
+  color: #a84c00;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.adet-buttons button:hover {
+  background-color: #643106;
+  color: white;
 }
 
 @media (max-width: 768px) {
-    .container { padding: 25px; margin: 20px auto; }
-    h1 { font-size: 2.2rem; }
-    .oda-kart { width: 100%; max-width: 400px; }
-    .filtre-alani { gap: 15px; align-items: flex-start; }
-    .takvim-container-yeni { max-width: 100%; }
-    .takvim-gun-hucre { min-height: 60px; font-size: 0.8rem; }
-    .takvim-ayarlari { flex-direction: column; max-width: 100%; margin-left: 0; margin-right: 0; }
-    .takvim-nav { flex-direction: row; max-width: 100%; margin-left: 0; margin-right: 0; padding: 0 10px; }
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  aside {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  header input {
+    width: 50%;
+  }
+
+  .product {
+    height: 300px;
+  }
+
+  .product img {
+    height: 150px;
+  }
 }
 
-@media (max-width: 576px) {
-    .container { padding: 15px; }
-    .filtre-alani { flex-direction: column; gap: 15px; align-items: stretch; }
-    .filtre-grup { min-width: 100%; }
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  header input {
+    width: 100%;
+  }
+
+  .cart-content {
+    width: 90%;
+  }
 }
 
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #a84c00;
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: toastIn 0.4s forwards, toastOut 0.4s 1.3s forwards;
+  z-index: 2000;
+}
+
+@keyframes toastIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.stok {
+  display: block;
+  font-size: 14px;
+  margin: 4px 0;
+  font-weight: 600;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.stok-var {
+  color: #4caf50;
+}
+
+.stok-az {
+  color: #ff9800;
+  animation: pulse 1s infinite alternate;
+}
+
+.stok-bitmis {
+  color: crimson;
+  font-weight: 700;
+  animation: shake 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes shake {
+  from { transform: translateX(0); }
+  to { transform: translateX(2px); }
+}
+
+
+
+
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+#satinalBtn {
+  background-color: #ffa726;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#satinalBtn:hover {
+  background-color: #fb8c00;
+  transform: translateY(-2px);
+}
+
+#satinalBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+
+
+.sort-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.sort-container select {
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+}
